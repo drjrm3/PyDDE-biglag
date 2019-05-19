@@ -314,10 +314,10 @@ double pastvalue(i,t,markno)
 	while ((x[k]>t)&&(k!=offsetplus))
 	{ if (k==0) k=size-1; else k--;}
 	k1=k+1;if (k1==size) k1=0;
-	if (t<x[k])
-	{
-		fprintf(stderr, "DDE Error: lag for variable %i too large at %g\nx[k]=%g   k=%li  t=%g\n",i,history.last_time-t,x[k],k,t);
-		eRROR("Lag too large for history buffer - try increasing the value of ‘hbsize’");
+	if (t<x[k]) {
+		//fprintf(stderr, "DDE Error: lag for variable %i too large at %g\nx[k]=%g   k=%li  t=%g\n",i,history.last_time-t,x[k],k,t);
+		//eRROR("Lag too large for history buffer - try increasing the value of ‘hbsize’");
+		return INFINITY;
 	}
 	x0=x[k];x1=x[k1];
 #ifdef SWITCHES  /* some code for not extrapolating through a switch */

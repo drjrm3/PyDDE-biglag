@@ -4,7 +4,8 @@ PyDDE: Python/C DDE solver
 This is an updated version of PyDDE: Python/C DDE solver
 Original code [here](http://users.ox.ac.uk/~clme1073/python/PyDDE/)
 
-This version was fixed for and tested on Ubuntu 14.04 LTS and Mac OSX 10.9
+This version has an added feature such that `pastvalue` function returns
+a sentinel value of INFINITY if it has exceeded the lag history buffer.
 
 ---  
 
@@ -28,6 +29,12 @@ Windows systems written in C.
 
 RELEASE NOTES
 =============
+
+0.2.3 - 19 May 2019
+
+-- Added a sentinel value detection for large lags to keep the solver from
+   running indefinitely for very stiff systems.
+
 0.2.2_2to3  -  21 December 2011
 
 -- Patched 0.2.2 for python3
