@@ -29,7 +29,6 @@ try:
     from .pydde import dde
     from .pydde import pastvalue
     from .pydde import pastgradient
-    print("Loaded package PyDDE")
 
     __all__ = ['dde', 'pastvalue', 'pastgradient']
 except ImportError:
